@@ -50,6 +50,7 @@ class ProductController extends Controller
         $product=Product::find($id);
         $product->sale=$request->input('sale');
         $product->save();
+        
 
         return redirect('/');
     }
@@ -91,6 +92,7 @@ class ProductController extends Controller
         $product->delete();
         return back();
     }
+   
 }
 
 
