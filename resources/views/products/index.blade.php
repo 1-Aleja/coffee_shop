@@ -1,18 +1,18 @@
-
+<link rel="stylesheet" href="{{ asset('css/app.css')}}">
 <div class='container'>
-    <div>
+    <div class="title">
         <h1>Listado de productos</h1>
     </div>
-    <div>
+    <div class="positionButton">
         <form action="/products/create" method="GET">
-            <button type="submit">Crear</button>
+            <button class="buttonCreate" type="submit">Crear</button>
         </form>
     </div>
     <div>
-        <table>
+        <table class='table'>
             <thead >
-                <tr>
-                    <th>id</th>
+                <tr >
+                    <th class='titleTable'>id</th>
                     <th>Nombre</th>
                     <th>Referencia</th>
                     <th>Precio</th>
@@ -20,29 +20,30 @@
                     <th>Categoria</th>
                     <th>Stock</th>
                     <th>Fecha de creación</th>
+                    <th>Gestion</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                 @foreach($products as $product)
                     <tr>
-                        <td>{{$product->id}}</td>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->reference}}</td>
-                        <td>{{$product->price}}</td>
-                        <td>{{$product->weight}}</td>
-                        <td>{{$product->category}}</td>
-                        <td>{{$product->stock}}</td>
-                        <td>{{$product->created_at}}</td>
-                        <td>
+                        <td class='titleTable'>{{$product->id}}</td>
+                        <td class='titleTable' >{{$product->name}}</td>
+                        <td class='titleTable' >{{$product->reference}}</td>
+                        <td class='titleTable' >{{$product->price}}</td>
+                        <td class='titleTable' >{{$product->weight}}</td>
+                        <td class='titleTable' >{{$product->category}}</td>
+                        <td class='titleTable' >{{$product->stock}}</td>
+                        <td class='titleTable' >{{$product->created_at}}</td>
+                        <td class='titleTable'>
                             <form action="/products/{{$product->id}}/edit" method="GET">
-                                <button>Editar</button>
+                                <button class="buttonEdit">Editar</button>
                             </form>
-                            <form action="/products/{{$product->id}}/destroy" method="POST">
+                            <form  action="/products/{{$product->id}}/destroy" method="POST">
                                 {{ csrf_field() }}
-                                <button type="submit">Eliminar</button>
+                                <button class="buttonDelete" type="submit">Eliminar</button>
                             </form>
                             <form action="/products/{{$product->id}}/sale" method="GET">
-                                <button type="submit">Venta de Producto</button>
+                                <button class="buttonSale"type="submit">Venta de Producto</button>
                             </form>
                         </td>
                     </tr>
