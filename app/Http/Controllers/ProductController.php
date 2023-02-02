@@ -37,7 +37,7 @@ class ProductController extends Controller
         $product->category=$request->input('category');
         $product->stock=$request->input('stock');
         $product->save();
-        return redirect('/products');//guarda bases de datos
+        return redirect('/');//guarda bases de datos
     }
 
     public function sale($id)
@@ -48,10 +48,10 @@ class ProductController extends Controller
     }
     public function saleupdate(Request $request, $id){
         $product=Product::find($id);
-        $product->stock=($request->input())-$product;
-        
+        $product->sale=$request->input('sale');
         $product->save();
-        return redirect('/products');
+
+        return redirect('/');
     }
 
     public function edit($id)
@@ -82,7 +82,7 @@ class ProductController extends Controller
         $product->category=$request->input('category');
         $product->stock=$request->input('stock');
         $product->save();
-        return redirect('/products');
+        return redirect('/');
     }
 
     public function destroy($id)

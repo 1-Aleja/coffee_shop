@@ -32,7 +32,7 @@
                         <td>{{$product->weight}}</td>
                         <td>{{$product->category}}</td>
                         <td>{{$product->stock}}</td>
-                        <td>{{$product->date}}</td>
+                        <td>{{$product->created_at}}</td>
                         <td>
                             <form action="/products/{{$product->id}}/edit" method="GET">
                                 <button>Editar</button>
