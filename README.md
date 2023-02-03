@@ -26,3 +26,6 @@ Iniciar el servidor de desarrollo local.
     php artisan serve
 
 Ahora puede acceder al servidor en http://localhost:8000 realizando login con los datos de acceso  por defecto del usuario administrador.
+
+ Ingresar en base de datos el archivo sql adjuntado
+
