@@ -1,39 +1,25 @@
+
 ## Instalación
 
 Clonar el repositorio
 
-    git clone https://key@github.com/onoffdevops/gps.git
-
+    git clone https://github.com/1-Aleja/coffee_shop.git
+    
 Cambiar al directorio del proyecto
 
-    cd gps
-
+    cd coffee_shop
+    
 Instalar las dependencias usando composer
 
     composer install
-
-Generar los ficheros 'autoload' cargando las clases agregadas
-
-	composer dump-autoload
-
 
 Copiar el archivo env de ejemplo y realice los cambios de configuración necesarios en el archivo .env (definir la conexión a la base de datos)
 
     cp .env.example .env
 
-Generar una nueva clave de aplicación
-
-    php artisan key:generate
-
-
 Ejecutar migraciones de base de datos
 
     php artisan migrate
-
-
-Crear enlace simbólico para acceder a los archivos de la carpeta storage desde public
-
-	php artisan storage:link
 
 Iniciar el servidor de desarrollo local.
 
